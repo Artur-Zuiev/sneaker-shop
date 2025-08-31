@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product — Sneaker Shop</title>
+
+    <link rel="stylesheet" href="css/product.css" />
+    <link rel="stylesheet" href="css/header.css" />
+
+    <script src="js/header.js" defer></script>
+
+    <!-- IMPORTANT: data with products comes first -->
+    <script src="data/products1.js" defer></script>
+
+    <!-- Then product page logic (renders everything, including gallery) -->
+    <script src="js/product.js" defer></script>
+
+    <!-- Lightweight image viewer (arrows, Esc, swipe, counter) -->
+    <script src="js/zoom.js" defer></script>
+  </head>
+  <body>
+    <header id="site-header"></header>
+
+    <main>
+      <div class="container">
+        <section id="product-detail" class="product-detail">
+          <!-- product.js will inject all product markup here -->
+
+          <!-- Gallery container: IMPORTANT! product.js will inject <img> here -->
+          <div class="product-gallery"></div>
+        </section>
+      </div>
+    </main>
+
+    <div id="toast" class="toast"></div>
+  </body>
+</html>

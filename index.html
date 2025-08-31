@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f6f7fb" />
+    <!-- updated from header.js -->
+    <meta name="color-scheme" content="light dark" />
+    <title>Catalog — Sneaker Shop</title>
+
+    <!-- Catalog styles -->
+    <link rel="stylesheet" href="css/catalog.css" />
+    <link rel="stylesheet" href="css/header.css" />
+
+    <!-- Unified header (inserts navigation Catalog / About / Cart) -->
+    <script src="js/header.js" defer></script>
+    <script src="js/zoom.js" defer></script>
+    <script src="js/product-gallery.js" defer></script>
+    <!-- Data and logic (defer — to not block rendering) -->
+    <script src="data/products1.js" defer></script>
+    <!-- Catalog logic -->
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <!-- ===== HEADER (injected from js/header.js) ===== -->
+    <header id="site-header"></header>
+
+    <!-- ===== TABS ===== -->
+    <section class="tabs" aria-label="Quick brand filter">
+      <div class="container">
+        <button class="tab-button active" data-brand="all" type="button">
+          All
+        </button>
+        <button class="tab-button" data-brand="Nike" type="button">Nike</button>
+        <button class="tab-button" data-brand="Adidas" type="button">
+          Adidas
+        </button>
+        <button class="tab-button" data-brand="Puma" type="button">Puma</button>
+      </div>
+    </section>
+
+    <!-- ===== FILTER BAR ===== -->
+    <section class="filters" aria-label="Catalog filters">
+      <div class="container">
+        <div class="filter-bar">
+          <div class="field">
+            <label for="brand-filter">Brand</label>
+            <select id="brand-filter" class="select">
+              <option value="all">All</option>
+              <option value="Nike">Nike</option>
+              <option value="Adidas">Adidas</option>
+              <option value="Puma">Puma</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="search-input">Search</label>
+            <input
+              id="search-input"
+              class="input search"
+              type="text"
+              placeholder="Search sneakers…"
+              autocomplete="off"
+            />
+          </div>
+
+          <div class="field">
+            <label for="sort-price">Price</label>
+            <select id="sort-price" class="select">
+              <option value="default">Default</option>
+              <option value="asc">Lowest first</option>
+              <option value="desc">Highest first</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MAIN ===== -->
+    <main>
+      <div class="container">
+        <div
+          id="products"
+          class="products-grid"
+          aria-live="polite"
+          aria-busy="false"
+        ></div>
+      </div>
+    </main>
+
+    <!-- ===== TOAST ===== -->
+    <div
+      id="toast"
+      class="toast"
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+    ></div>
+
+    <!-- ===== NOSCRIPT ===== -->
+    <noscript>
+      <div class="container" style="margin-top: 16px">
+        <div class="empty">JavaScript is required for the catalog to work.</div>
+      </div>
+    </noscript>
+  </body>
+</html>
